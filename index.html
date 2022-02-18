@@ -5,28 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="css/style.css">
+
     <title>To do List</title>
 </head>
-<main>
-    <header>
-        <div class="today">
-            <h1>30</h1>
-            <div class="date">
-                <h2>Apr</h2>
-                <h2>2022</h2>
-            </div>
-        </div>
-        <div class="weekDay">
-            <h1>Saturday</h1>
-        </div>
-    </header>
-    <div class="newItem">
-        <input type="text"><button>APERTE AQUI</button>
-    </div>
-</main>
 
 <body>
+    <header>
+        <div class="today">
+            <h1 class="day">18</h1>
+            <div class="date">
+                <h2 class="month">Feb</h2>
+                <h2 class="year">2017</h2>
+            </div>
+        </div>
+
+        <div class="weekDay">
+            <h2>Saturday</h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="newItem">
+            <input placeholder="Add something to do..." type="text"><button><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="list">
+            <div class="item">
+                <label for="">
+                    Levar cachorro no médico
+                </label>
+                <div class="btn">
+                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Comer na casa da mariana
+                </label>
+                <div class="btn">
+                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Levar esposa no casa da mãe
+                </label>
+                <div class="btn">
+                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Lavar a louça
+                </label>
+                <div class="btn">
+                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

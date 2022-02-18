@@ -1,9 +1,140 @@
 
 $primary-color: #403F4D
+$secondary-color: #2E2D33
+$third-color: #4E4D5B
 $white: #FAFAF8
 $green: #7FD9A3
+$red: #b95539
 $yellow: #F7F987
+$font-primary:'Poppins', sans-serif
+
 
 body
+    margin: auto
+    display: flex  
+    flex-direction: column
+    align-items: center
     background-color: $primary-color
     color: $white
+
+header
+    height: 200px
+    width: 700px
+    display: flex
+    justify-content: space-between
+    margin-top: 45px
+
+    .today
+        display: flex
+        text-align: center
+        align-items: center
+        
+        .date
+            margin-left: 5px
+        .day
+            letter-spacing: -5px
+            font-size: 80px
+            font-family: $font-primary
+            text-align: center
+            margin: 0
+            padding: 0
+        .month
+            font-size: 27px
+            font-family: $font-primary
+            margin: 0
+            padding: 0
+        .year
+            font-size: 22px
+            font-family: $font-primary
+            font-weight: normal
+            margin: 0
+            padding: 0
+            margin-top: -8px 
+
+    .weekDay
+        align-self: center
+        h2
+            letter-spacing: -1px
+            font-size: 35px
+            font-weight: normal
+            font-family: $font-primary
+
+
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 600px
+    margin-top: 10px
+    .newItem
+        display: flex
+        justify-content: center
+        width: 700px
+        height: 80px
+
+        input
+            border-top-left-radius: 7px
+            border-bottom-left-radius: 7px
+            padding: 10px
+            font-size: 25px 
+            color: $white
+            width: 100%
+            border: none
+            background-color: $secondary-color
+            &:focus
+                outline: none
+
+        button
+            color: $white
+            padding: 10px
+            padding-right: 17px
+            font-size: 40px
+            appearance: none
+            border: none
+            background-color: $secondary-color
+            cursor: pointer
+            border-top-right-radius: 7px
+            border-bottom-right-radius: 7px
+            transition: all 0.1s 0s ease-in
+            &:hover
+                color: #c4c4bf
+
+    .list
+        margin-top: 40px
+        height: 100%
+        width: 100%
+        display: flex
+        flex-direction: column
+
+        .item 
+            background-color: $third-color
+            display: flex
+            align-items: center
+            justify-content: space-between
+            width: 700px
+            height: 80px
+            border-radius: 7px
+            margin: 13px
+        label
+            font-size: 18px 
+            font-family: $font-primary
+            color: white
+            padding-right: 10px
+            padding-left: 10px
+        button
+            appearance: none
+            border: none
+            background-color: $third-color
+            font-size: 25px
+            padding: 10px
+            cursor: pointer
+            transition: all 0.1s 0s ease-in
+        .btn-done
+            color: $green
+            font-size: 30px
+            &:hover
+                color: #78faac
+        .btn-remove
+            color: $red
+            &:hover
+                color: #ec5f38

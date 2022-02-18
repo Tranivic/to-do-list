@@ -1,6 +1,146 @@
 body {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #403F4D;
   color: #FAFAF8;
+}
+
+header {
+  height: 200px;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+header .today {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+header .today .date {
+  margin-left: 5px;
+}
+header .today .day {
+  letter-spacing: -5px;
+  font-size: 80px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+header .today .month {
+  font-size: 27px;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header .today .year {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  margin-top: -8px;
+}
+header .weekDay {
+  align-self: center;
+}
+header .weekDay h2 {
+  letter-spacing: -1px;
+  font-size: 35px;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  margin-top: 10px;
+}
+main .newItem {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  height: 80px;
+}
+main .newItem input {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  padding: 10px;
+  font-size: 25px;
+  color: #FAFAF8;
+  width: 100%;
+  border: none;
+  background-color: #2E2D33;
+}
+main .newItem input:focus {
+  outline: none;
+}
+main .newItem button {
+  color: #FAFAF8;
+  padding: 10px;
+  padding-right: 17px;
+  font-size: 40px;
+  appearance: none;
+  border: none;
+  background-color: #2E2D33;
+  cursor: pointer;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: all 0.1s 0s ease-in;
+}
+main .newItem button:hover {
+  color: #c4c4bf;
+}
+main .list {
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .list .item {
+  background-color: #4E4D5B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 700px;
+  height: 80px;
+  border-radius: 7px;
+  margin: 13px;
+}
+main .list label {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+main .list button {
+  appearance: none;
+  border: none;
+  background-color: #4E4D5B;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.1s 0s ease-in;
+}
+main .list .btn-done {
+  color: #7FD9A3;
+  font-size: 30px;
+}
+main .list .btn-done:hover {
+  color: #78faac;
+}
+main .list .btn-remove {
+  color: #b95539;
+}
+main .list .btn-remove:hover {
+  color: #ec5f38;
 }
 
 /*# sourceMappingURL=style.css.map */
