@@ -9,4 +9,4 @@ This is a simple "to do list" made with javascript, i tried to not use any tutor
 
 
 
-Just follow the this [link](www.github.com)
+Just follow this [link](www.github.com)
