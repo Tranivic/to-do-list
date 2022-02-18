@@ -12,7 +12,7 @@ header {
   width: 700px;
   display: flex;
   justify-content: space-between;
-  margin-top: 45px;
+  margin-top: 30px;
 }
 header .today {
   display: flex;
@@ -121,25 +121,36 @@ main .list label {
   padding-left: 10px;
 }
 main .list button {
+  font-size: 28px;
   appearance: none;
   border: none;
   background-color: #4E4D5B;
-  font-size: 25px;
   padding: 10px;
   cursor: pointer;
   transition: all 0.1s 0s ease-in;
 }
 main .list .btn-done {
   color: #7FD9A3;
-  font-size: 30px;
 }
 main .list .btn-done:hover {
-  color: #78faac;
+  color: #10ec68;
 }
 main .list .btn-remove {
   color: #b95539;
 }
 main .list .btn-remove:hover {
+  color: #ec5f38;
+}
+main #clear-all {
+  font-size: 35px;
+  appearance: none;
+  background-color: #403F4D;
+  border: none;
+  color: #b95539;
+  cursor: pointer;
+  transition: all 0.1s 0s ease-in;
+}
+main #clear-all:hover {
   color: #ec5f38;
 }
 

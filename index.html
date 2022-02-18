@@ -35,42 +35,19 @@
 
     <main>
         <div class="newItem">
-            <input placeholder="Add something to do..." type="text"><button><i class="fas fa-plus"></i></button>
+            <input placeholder="Add something to do..." type="text" id="taskName"><button id="add-item"><i class="fas fa-plus"></i></button>
         </div>
-        <div class="list">
+        <div class="list" id="list">
             <div class="item">
                 <label for="">
-                    Levar cachorro no médico
+                    This task is a exemple...
                 </label>
                 <div class="btn">
-                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="item">
-                <label for="">
-                    Comer na casa da mariana
-                </label>
-                <div class="btn">
-                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="item">
-                <label for="">
-                    Levar esposa no casa da mãe
-                </label>
-                <div class="btn">
-                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="item">
-                <label for="">
-                    Lavar a louça
-                </label>
-                <div class="btn">
-                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove"><i class="fa fa-x" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
+        <button id="clear-all"><i class="fa fa-trash"></i></button>
     </main>
 
     <script src="script.js"></script>
