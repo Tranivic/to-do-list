@@ -4,7 +4,7 @@ var clearAll = document.getElementById("clear-all");
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
 var tasks = []
-counter = 0;
+counter = 1;
 
 btnAdd.addEventListener("click", addTask);
 clearAll.addEventListener("click", clearAllTasks);
@@ -16,7 +16,9 @@ function addTask() {
     var taskContent = document.getElementById("taskName").value
 
     if (taskContent == "") {
-        confirm("Empty task")
+        confirm("Empty task!")
+    } else if (counter > 5) {
+        confirm("Maximum of 5 tasks")
     } else {
         counter++
         var object = { Content: taskContent, Id: counter, Done: false }
