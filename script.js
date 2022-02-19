@@ -6,8 +6,9 @@ var tasks = []
 counter = 0;
 
 btnAdd.addEventListener("click", addTask);
-list.addEventListener("click", getButtonId)
-list.addEventListener("click", markAsDone)
+clearAll.addEventListener("click", clearAllTasks);
+list.addEventListener("click", getButtonId);
+list.addEventListener("click", markAsDone);
 
 function addTask() {
     counter++
@@ -16,6 +17,7 @@ function addTask() {
     tasks.push(object)
 
     attScreen()
+    document.getElementById("taskName").value = ""
 }
 
 function attScreen() {
@@ -84,8 +86,20 @@ function markAsDone(btnId) {
 
     for (let i = 0; i <= counter; i++) {
         if (tasks[i].Id == btnId) {
-            tasks[i].Done = true
-            attScreen()
+            if (tasks[i].Done == false) {
+                tasks[i].Done = true
+                attScreen()
+            } else {
+                tasks[i].Done = false
+                attScreen()
+            }
         }
     }
+}
+
+function clearAllTasks() {
+    list.innerHTML = ""
+    tasks = []
+    counter = 0
+    document.getElementById("taskName").value = ""
 }
