@@ -16,9 +16,9 @@ function addTask() {
     var taskContent = document.getElementById("taskName").value
 
     if (taskContent == "") {
-        confirm("Empty task!")
+        confirm("Empty task")
     } else if (counter > 5) {
-        confirm("Maximum of 5 tasks")
+        confirm("Maximum of tasks reached")
     } else {
         counter++
         var object = { Content: taskContent, Id: counter, Done: false }
@@ -33,7 +33,7 @@ function addTask() {
 function attScreen() {
     list.innerHTML = "";
 
-    for (var i = 0; i < tasks.length; i++) {
+    for (var i = 0; i <= counter; i++) {
 
         if (tasks[i].Done == false) {
             list.innerHTML += `
