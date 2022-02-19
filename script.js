@@ -1,4 +1,5 @@
 //Variables
+
 var clearAll = document.getElementById("clear-all");
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
@@ -10,14 +11,21 @@ clearAll.addEventListener("click", clearAllTasks);
 list.addEventListener("click", getButtonId);
 list.addEventListener("click", markAsDone);
 
-function addTask() {
-    counter++
-    var taskContent = document.getElementById("taskName").value
-    var object = { Content: taskContent, Id: counter, Done: false }
-    tasks.push(object)
 
-    attScreen()
-    document.getElementById("taskName").value = ""
+function addTask() {
+    var taskContent = document.getElementById("taskName").value
+
+    if (taskContent == "") {
+        confirm("Empty task")
+    } else {
+        counter++
+        var object = { Content: taskContent, Id: counter, Done: false }
+        tasks.push(object)
+
+        attScreen()
+        document.getElementById("taskName").value = ""
+    }
+
 }
 
 function attScreen() {
@@ -27,25 +35,25 @@ function attScreen() {
 
         if (tasks[i].Done == false) {
             list.innerHTML += `
-        <div class="item">
-                <label>
-                    ${tasks[i].Content}
-                </label>
-                <div class="btn">
-                    <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+            <div class="item">
+            <label>
+            ${tasks[i].Content}
+            </label>
+            <div class="btn">
+            <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
                 </div>
-            </div>
+                </div>
         `
         } else {
 
             list.innerHTML += `
         <div class="item item-done">
-                <label>
-                    ${tasks[i].Content}
-                </label>
-                <div class="btn">
-                    <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
-                </div>
+        <label>
+        ${tasks[i].Content}
+        </label>
+        <div class="btn">
+        <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+        </div>
             </div>
         `
 
@@ -103,3 +111,14 @@ function clearAllTasks() {
     counter = 0
     document.getElementById("taskName").value = ""
 }
+
+function showDateOnScreen() {
+
+    document.getElementById("month").innerHTML = dayjs().format('MMM')
+    document.getElementById("day").innerHTML = dayjs().format('D')
+    document.getElementById("year").innerHTML = dayjs().format('YYYY')
+    document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
+
+}
+
+showDateOnScreen()
