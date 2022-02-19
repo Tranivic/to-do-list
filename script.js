@@ -7,11 +7,12 @@ counter = 0;
 
 btnAdd.addEventListener("click", addTask);
 list.addEventListener("click", getButtonId)
+list.addEventListener("click", markAsDone)
 
 function addTask() {
     counter++
     var taskContent = document.getElementById("taskName").value
-    var object = { Content: taskContent, Id: counter, }
+    var object = { Content: taskContent, Id: counter, Done: false }
     tasks.push(object)
 
     attScreen()
@@ -21,16 +22,32 @@ function attScreen() {
     list.innerHTML = "";
 
     for (var i = 0; i < tasks.length; i++) {
-        list.innerHTML += `
+
+        if (tasks[i].Done == false) {
+            list.innerHTML += `
         <div class="item">
                 <label>
                     ${tasks[i].Content}
                 </label>
                 <div class="btn">
-                    <button class="btn-done"><i class="fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+                    <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
                 </div>
             </div>
         `
+        } else {
+
+            list.innerHTML += `
+        <div class="item item-done">
+                <label>
+                    ${tasks[i].Content}
+                </label>
+                <div class="btn">
+                    <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+                </div>
+            </div>
+        `
+
+        }
     }
 }
 
@@ -41,6 +58,13 @@ function getButtonId(e) {
         let btnId = e.target.id
 
         removeTask(btnId)
+
+    } else if (e.target.classList.contains('btn-done')) {
+
+        let btnId = e.target.id
+
+        markAsDone(btnId)
+
     }
 
 }
@@ -50,6 +74,17 @@ function removeTask(btnId) {
     for (let i = 0; i <= counter; i++) {
         if (tasks[i].Id == btnId) {
             tasks.splice(i, 1);
+
+            attScreen()
+        }
+    }
+}
+
+function markAsDone(btnId) {
+
+    for (let i = 0; i <= counter; i++) {
+        if (tasks[i].Id == btnId) {
+            tasks[i].Done = true
             attScreen()
         }
     }

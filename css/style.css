@@ -113,6 +113,9 @@ main .list .item {
   border-radius: 7px;
   margin: 13px;
 }
+main .list .item-done {
+  background-color: #7FD9A3;
+}
 main .list label {
   font-size: 18px;
   font-family: "Poppins", sans-serif;
@@ -124,7 +127,7 @@ main .list button {
   font-size: 28px;
   appearance: none;
   border: none;
-  background-color: #4E4D5B;
+  background: none;
   padding: 10px;
   transition: all 0.1s 0s ease-in;
 }
