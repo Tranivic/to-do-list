@@ -126,8 +126,10 @@ main .list button {
   border: none;
   background-color: #4E4D5B;
   padding: 10px;
-  cursor: pointer;
   transition: all 0.1s 0s ease-in;
+}
+main .list button i {
+  cursor: pointer;
 }
 main .list .btn-done {
   color: #7FD9A3;
