@@ -4,7 +4,7 @@ var clearAll = document.getElementById("clear-all");
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
 var tasks = []
-counter = 1;
+counter = 0;
 
 btnAdd.addEventListener("click", addTask);
 clearAll.addEventListener("click", clearAllTasks);
@@ -82,7 +82,7 @@ function getButtonId(e) {
 }
 
 function removeTask(btnId) {
-
+    counter--
     for (let i = 0; i <= counter; i++) {
         if (tasks[i].Id == btnId) {
             tasks.splice(i, 1);
