@@ -1,19 +1,45 @@
 //Variables
-
 var clearAll = document.getElementById("clear-all");
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
+var checkbox = document.getElementById("chk");
 var tasks = []
 counter = 0;
 
+//Event Listeners
 btnAdd.addEventListener("click", addTask);
 clearAll.addEventListener("click", clearAllTasks);
 list.addEventListener("click", getButtonId);
 list.addEventListener("click", markAsDone);
+checkbox.addEventListener("click", changeTheme)
 
+//This function will set the date on screen when page is loaded (Dayjs (library))
+window.onload = () => {
+    changeTheme()
+    document.getElementById("month").innerHTML = dayjs().format('MMM')
+    document.getElementById("day").innerHTML = dayjs().format('D')
+    document.getElementById("year").innerHTML = dayjs().format('YYYY')
+    document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
+}
+
+function changeTheme() {
+    var body = document.querySelector('body');
+
+    if (checkbox.checked) {
+
+        body.style.backgroundColor = "#FAFAF8"
+        body.style.color = "#4E4D5B"
+
+    } else {
+
+        body.style.backgroundColor = "#403F4D"
+        body.style.color = "#FAFAF8"
+    }
+
+}
 
 function addTask() {
-    var taskContent = document.getElementById("taskName").value
+    let taskContent = document.getElementById("taskName").value
 
     if (taskContent == "") {
         confirm("Empty task")
@@ -21,7 +47,7 @@ function addTask() {
         confirm("Maximum of tasks reached")
     } else {
         counter++
-        var object = { Content: taskContent, Id: counter, Done: false }
+        let object = { Content: taskContent, Id: counter, Done: false }
         tasks.push(object)
 
         attScreen()
@@ -32,6 +58,7 @@ function addTask() {
 
 function attScreen() {
     list.innerHTML = "";
+    document.getElementById("taskName").value = "";
 
     for (var i = 0; i <= counter; i++) {
 
@@ -42,7 +69,7 @@ function attScreen() {
             ${tasks[i].Content}
             </label>
             <div class="btn">
-            <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+            <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
                 </div>
                 </div>
         `
@@ -54,7 +81,7 @@ function attScreen() {
         ${tasks[i].Content}
         </label>
         <div class="btn">
-        <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="btn-remove remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+        <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
         </div>
             </div>
         `
@@ -113,14 +140,3 @@ function clearAllTasks() {
     counter = 0
     document.getElementById("taskName").value = ""
 }
-
-function showDateOnScreen() {
-
-    document.getElementById("month").innerHTML = dayjs().format('MMM')
-    document.getElementById("day").innerHTML = dayjs().format('D')
-    document.getElementById("year").innerHTML = dayjs().format('YYYY')
-    document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
-
-}
-
-showDateOnScreen()

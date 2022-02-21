@@ -27,12 +27,10 @@
                 <h2 class="year" id="year"></h2>
             </div>
         </div>
-
         <div class="weekDay">
             <h2 id="weekDay"></h2>
         </div>
     </header>
-
     <main>
         <div class="newItem">
             <input placeholder="Add something to do..." type="text" id="taskName"><button id="add-item"><i class="fas fa-plus"></i></button>
@@ -55,6 +53,13 @@
             </div>
         </div>
         <button id="clear-all"><i class="fa fa-trash"></i></button>
+        <div class="theme-change">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+		    <i class="fas fa-moon"></i>
+		    <i class="fas fa-sun"></i>
+		    <div class="ball"></div>
+        </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>

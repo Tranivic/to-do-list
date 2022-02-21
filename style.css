@@ -5,6 +5,7 @@ body {
   align-items: center;
   background-color: #403F4D;
   color: #FAFAF8;
+  transition: background 0.2s linear;
 }
 
 header {
@@ -97,6 +98,8 @@ main .newItem button:hover {
 main .list {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 636px;
 }
 main .list .item {
   background-color: #4E4D5B;
@@ -144,7 +147,7 @@ main .list .btn-remove:hover {
 main #clear-all {
   font-size: 35px;
   appearance: none;
-  background-color: #403F4D;
+  background: none;
   border: none;
   color: #b95539;
   cursor: pointer;
@@ -152,6 +155,39 @@ main #clear-all {
 }
 main #clear-all:hover {
   color: #ec5f38;
+}
+main .theme-change {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  top: 0;
+  left: 0;
+}
+main .checkbox {
+  opacity: 0;
+  position: absolute;
+}
+main .checkbox:checked + .label .ball {
+  transform: translateX(33px);
+}
+main .label {
+  color: #FAFAF8;
+  background-color: #2E2D33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 5px;
+  width: 50px;
+  position: relative;
+}
+main .ball {
+  border-radius: 50%;
+  background-color: #FAFAF8;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  transition: transform 0.1s linear;
 }
 
 /*# sourceMappingURL=style.css.map */
