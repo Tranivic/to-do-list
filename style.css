@@ -127,34 +127,35 @@ main .list button {
   border: none;
   background: none;
   padding: 10px;
-  transition: all 0.1s 0s ease-in;
 }
 main .list button i {
   cursor: pointer;
 }
 main .list .btn-done {
-  color: #7FD9A3;
+  color: #10ec68;
+  transition: all 0.1s 0s ease-in;
 }
 main .list .btn-done:hover {
-  color: #10ec68;
+  color: #0a9140;
 }
 main .list .btn-remove {
-  color: #b95539;
+  color: #ec5f38;
+  transition: all 0.1s 0s ease-in;
 }
 main .list .btn-remove:hover {
-  color: #ec5f38;
+  color: #b95539;
 }
 main #clear-all {
   font-size: 35px;
   appearance: none;
   background: none;
   border: none;
-  color: #b95539;
+  color: #ec5f38;
   cursor: pointer;
   transition: all 0.1s 0s ease-in;
 }
 main #clear-all:hover {
-  color: #ec5f38;
+  color: #b95539;
 }
 main .theme-change {
   position: absolute;
@@ -171,6 +172,7 @@ main .checkbox:checked + .label .ball {
   transform: translateX(33px);
 }
 main .label {
+  cursor: pointer;
   color: #FAFAF8;
   background-color: #2E2D33;
   display: flex;

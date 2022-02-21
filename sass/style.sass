@@ -3,8 +3,8 @@ $primary-color: #403F4D
 $secondary-color: #2E2D33
 $third-color: #4E4D5B
 $white: #FAFAF8
-$green: #7FD9A3
-$red: #b95539
+$green: #10ec68
+$red: #ec5f38
 $yellow: #F7F987
 $font-primary:'Poppins', sans-serif
     
@@ -116,7 +116,7 @@ main
 
         //Javascript related
         .item-done
-            background-color: $green
+            background-color: #7FD9A3
 
         label
             font-size: 18px 
@@ -130,18 +130,19 @@ main
             border: none
             background: none
             padding: 10px
-            transition: all 0.1s 0s ease-in
             i
                 cursor: pointer
             
         .btn-done
             color: $green
+            transition: all 0.1s 0s ease-in
             &:hover
-                color: #10ec68
+                color: #0a9140
         .btn-remove
             color: $red
+            transition: all 0.1s 0s ease-in
             &:hover
-                color: #ec5f38
+                color: #b95539
     
     #clear-all
         font-size: 35px
@@ -152,7 +153,7 @@ main
         cursor: pointer
         transition: all 0.1s 0s ease-in
         &:hover
-            color: #ec5f38
+            color: #b95539
 
     .theme-change
         position: absolute
@@ -167,6 +168,7 @@ main
             transform: translateX(33px)
                     
     .label
+        cursor: pointer
         color: $white
         background-color: #2E2D33
         display: flex
