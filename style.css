@@ -96,6 +96,7 @@ main .newItem button:hover {
   color: #c4c4bf;
 }
 main .list {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   width: 100%;

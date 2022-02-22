@@ -1,5 +1,4 @@
 //Variables
-var clearAll = document.getElementById("clear-all");
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
 var checkbox = document.getElementById("chk");
@@ -8,7 +7,6 @@ counter = 0;
 
 //Event Listeners
 btnAdd.addEventListener("click", addTask);
-clearAll.addEventListener("click", clearAllTasks);
 list.addEventListener("click", getButtonId);
 list.addEventListener("click", markAsDone);
 checkbox.addEventListener("click", changeTheme)
@@ -27,7 +25,7 @@ function changeTheme() {
 
     if (checkbox.checked) {
 
-        body.style.backgroundColor = "#FAFAF8"
+        body.style.backgroundColor = "#FCFBF7"
         body.style.color = "#4E4D5B"
 
     } else {
@@ -132,11 +130,4 @@ function markAsDone(btnId) {
             }
         }
     }
-}
-
-function clearAllTasks() {
-    list.innerHTML = ""
-    tasks = []
-    counter = 0
-    document.getElementById("taskName").value = ""
 }
