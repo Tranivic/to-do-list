@@ -114,18 +114,23 @@
         background-color: #7FD9A3;
     }
     main .list label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
         font-size: 18px;
         font-family: "Poppins", sans-serif;
         color: white;
         padding-right: 10px;
         padding-left: 10px;
     }
+    main .list .btn {
+        display: flex;
+    }
     main .list button {
         font-size: 28px;
         appearance: none;
         border: none;
         background: none;
-        padding: 10px;
     }
     main .list button i {
         cursor: pointer;
@@ -887,7 +892,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 200px;
+        width: 300px;
         height: 80px;
         border-radius: 7px;
         margin: 13px;
@@ -901,6 +906,7 @@
         color: white;
         padding-right: 10px;
         padding-left: 10px;
+        max-width: 200px;
     }
     main .list button {
         font-size: 28px;
