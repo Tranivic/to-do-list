@@ -1,4 +1,5 @@
-//Variables
+//
+var input = document.getElementById("taskName")
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
 var checkbox = document.getElementById("chk");
@@ -10,6 +11,13 @@ btnAdd.addEventListener("click", addTask);
 list.addEventListener("click", getButtonId);
 list.addEventListener("click", markAsDone);
 checkbox.addEventListener("click", changeTheme)
+
+input.addEventListener("keyup", e => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        addTask()
+    }
+})
 
 //This function will set the date on screen when page is loaded (Dayjs (library))
 window.onload = () => {
@@ -51,8 +59,8 @@ function addTask() {
         attScreen()
         document.getElementById("taskName").value = ""
     }
-
 }
+
 
 function attScreen() {
     list.innerHTML = "";
