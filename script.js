@@ -1,7 +1,7 @@
 //Variables
 var input = document.getElementById("taskName")
-var btnAdd = document.getElementById("add-item");
-var list = document.getElementById("list");
+const btnAdd = document.getElementById("add-item");
+const list = document.getElementById("list");
 var checkbox = document.getElementById("chk");
 var tasks = []
 
@@ -28,7 +28,6 @@ window.onload = () => {
     document.getElementById("year").innerHTML = dayjs().format('YYYY')
     document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
     setAsVisitor()
-    attScreen()
 }
 
 function changeTheme() {
@@ -49,7 +48,6 @@ function changeTheme() {
 
 function addTask() {
     let taskContent = document.getElementById("taskName").value
-
     if (taskContent == "") {
         confirm("Empty task")
     } else {
@@ -59,7 +57,6 @@ function addTask() {
         tasks.push(object)
         document.getElementById("taskName").value = ""
         attScreen()
-
     }
 }
 
@@ -112,7 +109,6 @@ function attScreen() {
     list.innerHTML = "";
     document.getElementById("taskName").value = "";
 
-
     for (var i = 0; i <= tasks.length; i++) {
 
         if (tasks[i].Done == false) {
@@ -147,6 +143,9 @@ function setAsVisitor() {
     if (typeof Storage !== "undefined") {
         if (!localStorage.counter) {
             localStorage.counter = 0
+            localStorage.localTasks = null
+        } else{
+            attScreen()
         }
     }
 }
