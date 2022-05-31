@@ -55,10 +55,10 @@ function addTask() {
     } else {
         localStorage.counter++
         let object = { Content: taskContent, Id: localStorage.counter, Done: false }
+        SaveDataToLocalStorage(object)
         tasks.push(object)
-        SaveDataToLocalStorage('lol',object)
-        attScreen()
         document.getElementById("taskName").value = ""
+        attScreen()
 
     }
 }
@@ -84,7 +84,7 @@ function removeTask(btnId) {
     for (let i = 0; i <= tasks.length; i++) {
         if (tasks[i].Id == btnId) {
             tasks.splice(i, 1);
-            SaveDataToLocalStorage('set', tasks)
+            localStorage.setItem('localTasks', JSON.stringify(tasks))
             attScreen()
         }
     }
@@ -96,11 +96,11 @@ function markAsDone(btnId) {
         if (tasks[i].Id == btnId) {
             if (tasks[i].Done == false) {
                 tasks[i].Done = true
-                SaveDataToLocalStorage('set', tasks)
+                localStorage.setItem('localTasks', JSON.stringify(tasks))
                 attScreen()
             } else {
                 tasks[i].Done = false
-                SaveDataToLocalStorage('set', tasks)
+                localStorage.setItem('localTasks', JSON.stringify(tasks))
                 attScreen()
             }
         }
@@ -151,14 +151,9 @@ function setAsVisitor() {
     }
 }
 
-function SaveDataToLocalStorage(type, data) {
-    if (type === "set") {
-        localStorage.setItem('localTasks', JSON.stringify(data))
-    }
-    else {
-        var a = [];
-        a = JSON.parse(localStorage.getItem('localTasks')) || [];
-        a.push(data);
-        localStorage.setItem('localTasks', JSON.stringify(a));
-    }
+function SaveDataToLocalStorage(data) {
+    var a = [];
+    a = JSON.parse(localStorage.getItem('localTasks')) || [];
+    a.push(data);
+    localStorage.setItem('localTasks', JSON.stringify(a));
 }
