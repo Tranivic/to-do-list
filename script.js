@@ -4,7 +4,6 @@ var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
 var checkbox = document.getElementById("chk");
 var tasks = []
-counter = 0;
 
 
 //Event Listeners
@@ -29,6 +28,7 @@ window.onload = () => {
     document.getElementById("year").innerHTML = dayjs().format('YYYY')
     document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
     setAsVisitor()
+    attScreen()
 }
 
 function changeTheme() {
@@ -52,15 +52,14 @@ function addTask() {
 
     if (taskContent == "") {
         confirm("Empty task")
-    } else if (counter > 5) {
-        confirm("Maximum of tasks reached")
     } else {
-        counter++
-        let object = { Content: taskContent, Id: counter, Done: false }
+        localStorage.counter++
+        let object = { Content: taskContent, Id: localStorage.counter, Done: false }
         tasks.push(object)
+        SaveDataToLocalStorage('lol',object)
         attScreen()
         document.getElementById("taskName").value = ""
-        
+
     }
 }
 
@@ -82,11 +81,10 @@ function getButtonId(e) {
 }
 
 function removeTask(btnId) {
-    counter--
-    for (let i = 0; i <= counter; i++) {
+    for (let i = 0; i <= tasks.length; i++) {
         if (tasks[i].Id == btnId) {
             tasks.splice(i, 1);
-
+            SaveDataToLocalStorage('set', tasks)
             attScreen()
         }
     }
@@ -94,25 +92,28 @@ function removeTask(btnId) {
 
 function markAsDone(btnId) {
 
-    for (let i = 0; i <= counter; i++) {
+    for (let i = 0; i <= tasks.length; i++) {
         if (tasks[i].Id == btnId) {
             if (tasks[i].Done == false) {
                 tasks[i].Done = true
+                SaveDataToLocalStorage('set', tasks)
                 attScreen()
             } else {
                 tasks[i].Done = false
+                SaveDataToLocalStorage('set', tasks)
                 attScreen()
             }
         }
     }
 }
 
-function attScreen() {    
+function attScreen() {
+    tasks = JSON.parse(localStorage.getItem('localTasks'))
     list.innerHTML = "";
     document.getElementById("taskName").value = "";
-    
-    
-    for (var i = 0; i <= counter; i++) {
+
+
+    for (var i = 0; i <= tasks.length; i++) {
 
         if (tasks[i].Done == false) {
             list.innerHTML += `
@@ -142,13 +143,22 @@ function attScreen() {
     }
 }
 
-const setAsVisitor = () => {
+function setAsVisitor() {
     if (typeof Storage !== "undefined") {
-        if (localStorage.visitor) {
-            localStorage.visitor
-            localStorage.visitor = Number(localStorage.visitor) = true;
-        } else {
-            localStorage.visitor = true;
+        if (!localStorage.counter) {
+            localStorage.counter = 0
         }
+    }
+}
+
+function SaveDataToLocalStorage(type, data) {
+    if (type === "set") {
+        localStorage.setItem('localTasks', JSON.stringify(data))
+    }
+    else {
+        var a = [];
+        a = JSON.parse(localStorage.getItem('localTasks')) || [];
+        a.push(data);
+        localStorage.setItem('localTasks', JSON.stringify(a));
     }
 }
