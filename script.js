@@ -1,4 +1,4 @@
-//
+//Variables
 var input = document.getElementById("taskName")
 var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("list");
@@ -6,18 +6,20 @@ var checkbox = document.getElementById("chk");
 var tasks = []
 counter = 0;
 
+
 //Event Listeners
 btnAdd.addEventListener("click", addTask);
 list.addEventListener("click", getButtonId);
 list.addEventListener("click", markAsDone);
 checkbox.addEventListener("click", changeTheme)
-
 input.addEventListener("keyup", e => {
     if (e.keyCode === 13) {
         e.preventDefault();
         addTask()
     }
 })
+
+
 
 //This function will set the date on screen when page is loaded (Dayjs (library))
 window.onload = () => {
@@ -26,6 +28,7 @@ window.onload = () => {
     document.getElementById("day").innerHTML = dayjs().format('D')
     document.getElementById("year").innerHTML = dayjs().format('YYYY')
     document.getElementById("weekDay").innerHTML = dayjs().format('dddd')
+    setAsVisitor()
 }
 
 function changeTheme() {
@@ -55,47 +58,11 @@ function addTask() {
         counter++
         let object = { Content: taskContent, Id: counter, Done: false }
         tasks.push(object)
-
         attScreen()
         document.getElementById("taskName").value = ""
+        
     }
 }
-
-
-function attScreen() {
-    list.innerHTML = "";
-    document.getElementById("taskName").value = "";
-
-    for (var i = 0; i <= counter; i++) {
-
-        if (tasks[i].Done == false) {
-            list.innerHTML += `
-            <div class="item">
-            <label>
-            ${tasks[i].Content}
-            </label>
-            <div class="btn">
-            <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
-                </div>
-                </div>
-        `
-        } else {
-
-            list.innerHTML += `
-        <div class="item item-done">
-        <label>
-        ${tasks[i].Content}
-        </label>
-        <div class="btn">
-        <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
-        </div>
-            </div>
-        `
-
-        }
-    }
-}
-
 
 function getButtonId(e) {
 
@@ -136,6 +103,52 @@ function markAsDone(btnId) {
                 tasks[i].Done = false
                 attScreen()
             }
+        }
+    }
+}
+
+function attScreen() {    
+    list.innerHTML = "";
+    document.getElementById("taskName").value = "";
+    
+    
+    for (var i = 0; i <= counter; i++) {
+
+        if (tasks[i].Done == false) {
+            list.innerHTML += `
+            <div class="item">
+            <label>
+            ${tasks[i].Content}
+            </label>
+            <div class="btn">
+            <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+                </div>
+                </div>
+        `
+        } else {
+
+            list.innerHTML += `
+        <div class="item item-done">
+        <label>
+        ${tasks[i].Content}
+        </label>
+        <div class="btn">
+        <button class="btn-done"><i id="${tasks[i].Id}" class=" btn-done fa-solid fa-check"></i></button><button class="remove"><i id="${tasks[i].Id}" class=" btn-remove fa fa-x"></i></button>
+        </div>
+            </div>
+        `
+
+        }
+    }
+}
+
+const setAsVisitor = () => {
+    if (typeof Storage !== "undefined") {
+        if (localStorage.visitor) {
+            localStorage.visitor
+            localStorage.visitor = Number(localStorage.visitor) = true;
+        } else {
+            localStorage.visitor = true;
         }
     }
 }

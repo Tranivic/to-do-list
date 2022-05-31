@@ -862,6 +862,9 @@
         border: none;
         background-color: #2E2D33;
     }
+    main .newItem input::placeholder {
+        font-size: 10px
+    }
     main .newItem input:focus {
         outline: none;
     }

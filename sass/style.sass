@@ -17,7 +17,7 @@ body
     align-items: center
     background-color: $primary-color
     color: $white
-    transition: background 0.2s linear
+    transition: background 0.2s liner
     
 
 
@@ -103,9 +103,8 @@ main
         display: flex
         flex-direction: column
         width: 100%
-        min-height: 636px
 
-        .item 
+        .item
             background-color: $third-color
             display: flex
             align-items: center
@@ -144,30 +143,18 @@ main
             transition: all 0.1s 0s ease-in
             &:hover
                 color: #b95539
-    
-    #clear-all
-        font-size: 35px
-        appearance: none
-        background: none
-        border: none
-        color: $red
-        cursor: pointer
-        transition: all 0.1s 0s ease-in
-        &:hover
-            color: #b95539
-
-    .theme-change
-        position: absolute
-        margin-top: 10px
-        margin-left: 10px
-        top: 0
-        left: 0
+                
+.theme-change
+    position: absolute
+    margin-top: 10px
+    margin-left: 10px
+    top: 0
+    left: 0
     .checkbox
         opacity: 0
         position: absolute
         &:checked + .label .ball
-            transform: translateX(33px)
-                    
+            transform: translateX(33px)                
     .label
         cursor: pointer
         color: $white
@@ -186,4 +173,52 @@ main
         height: 22px
         width: 22px
         transition: transform 0.1s linear
+
+// .modal
+//     background-color: $secondary-color
+//     position: absolute
+//     display: flex
+//     flex-direction: column
+//     justify-content: center
+//     align-items: center
+//     left: 0
+//     right: 0
+//     margin: auto
+//     width: 500px
+//     height: 250px
+//     border-radius: 7px
+//     font-size: 18px
+//     border: solid 6px $third-color
+//     .logo
+//         margin-bottom: 20px
+//         margin-top: 0
+//         padding: 0
+//         font-size: 40px
+//         color: $white
+//     input
+//         color: $white
+//         background-color: $primary-color
+//         font-family: $font-primary
+//         font-size: 18px
+//         border-radius: 7px
+//         appearance: none
+//         border: none
+//         width: 450px
+//         height: 60px
+//     div
+//         margin-top: 30px
+//         display: flex
+//         justify-content: center
+//         button
+//             width: 85px
+//             padding: 10px
+//             background-color: $third-color
+//             font-family: $font-primary
+//             color: $white
+//             font-size: 18px
+//             border-radius: 7px
+//             margin: 20px
+//             border: none
+//             appearance: none
+//             text-decoration: none
         

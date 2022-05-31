@@ -100,7 +100,6 @@ main .list {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 636px;
 }
 main .list .item {
   background-color: #4E4D5B;
@@ -146,33 +145,22 @@ main .list .btn-remove {
 main .list .btn-remove:hover {
   color: #b95539;
 }
-main #clear-all {
-  font-size: 35px;
-  appearance: none;
-  background: none;
-  border: none;
-  color: #ec5f38;
-  cursor: pointer;
-  transition: all 0.1s 0s ease-in;
-}
-main #clear-all:hover {
-  color: #b95539;
-}
-main .theme-change {
+
+.theme-change {
   position: absolute;
   margin-top: 10px;
   margin-left: 10px;
   top: 0;
   left: 0;
 }
-main .checkbox {
+.theme-change .checkbox {
   opacity: 0;
   position: absolute;
 }
-main .checkbox:checked + .label .ball {
+.theme-change .checkbox:checked + .label .ball {
   transform: translateX(33px);
 }
-main .label {
+.theme-change .label {
   cursor: pointer;
   color: #FAFAF8;
   background-color: #2E2D33;
@@ -184,7 +172,7 @@ main .label {
   width: 50px;
   position: relative;
 }
-main .ball {
+.theme-change .ball {
   border-radius: 50%;
   background-color: #FAFAF8;
   position: absolute;
