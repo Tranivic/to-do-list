@@ -10,4 +10,4 @@ This project use a library to manipulate the date.
 ## How to use?
 
 
-Just follow this [link](https://a-uvic.github.io/to-do-list/)
+Just follow this [link](https://Tranivic.github.io/to-do-list/)
