@@ -1,66 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style/responsive.css">
-
-    <title>Todo List</title>
-</head>
-
-<body>
-    <header>
-        <div class="today">
-            <h1 class="day" id="day"></h1>
-            <div class="date">
-                <h2 class="month" id="month"></h2>
-                <h2 class="year" id="year"></h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style/responsive.css">
+        <title>Todo List</title>
+    </head>
+    <body>
+        <div class="theme-change">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+        
+        <header>
+            <div class="today">
+                <h1 class="day" id="day"></h1>
+                <div class="date">
+                    <h2 class="month" id="month"></h2>
+                    <h2 class="year" id="year"></h2>
+                </div>
             </div>
-        </div>
-        <div class="weekDay">
-            <h2 id="weekDay"></h2>
-        </div>
-    </header>
-    <main>
-        <div class="newItem">
-            <input placeholder="Add something to do..." type="text" id="taskName"><button id="add-item"><i class="fas fa-plus"></i></button>
-        </div>
-        <div class="list" id="list">
-        </div>
-        <!-- Modal not implemented yet -->
-        <!-- <div class="modal">
-            <div class="logo"><i class="fas fa-edit"></i></div>
-            <input type="text" class="newTaskContent">
-            <div>
-                <button>
-                     Save 
-                </button>
-                <button>
-                    Cancel
-                </button>
+            <div class="weekDay">
+                <h2 id="weekDay"></h2>
             </div>
-        </div> -->
-    </main>
-    <div class="theme-change">
-        <input type="checkbox" class="checkbox" id="chk" />
-        <label class="label" for="chk">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <div class="ball"></div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
-</body>
+        </header>
 
+        <main>
+            <div class="newItem">
+                <input type="text" id="task-input" placeholder="Add something to do...">
+                <button id="button-to-add-task"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="list" id="list-of-tasks"></div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
