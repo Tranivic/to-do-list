@@ -47,14 +47,9 @@
   
 
 1. Clone o repositório em sua máquina:
-
   
 
-bashCopy code
-
-  
-
-`git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+`git clone git@github.com:Tranivic/to-do-list.git`
 
   
 
