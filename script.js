@@ -65,11 +65,13 @@ function addTask() {
 // Função para pegar o id do botão clicado, para identificar a task especifica.
 function getButtonId(e) {
   if (e.target.classList.contains('btn-remove')) {
-    let btnId = e.target.id;
-    removeTask(btnId);
+    if (e.target.id) {
+      removeTask(e.target.id);
+    }
   } else if (e.target.classList.contains('btn-done')) {
-    let btnId = e.target.id;
-    markAsDone(btnId);
+    if (e.target.id) {
+      markAsDone(e.target.id);
+    }
   }
 }
 
@@ -84,6 +86,7 @@ function removeTask(btnId) {
 // Função que adiciona a task no array de tasks
 function markAsDone(btnId) {
   const clickedTask = tasks.find((element) => element.id == btnId);
+  console.log(clickedTask);
   const taskIsDone = clickedTask.done;
   clickedTask.done = !taskIsDone;
   localStorage.setItem('localTasks', JSON.stringify(tasks));
